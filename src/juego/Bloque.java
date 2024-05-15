@@ -27,6 +27,7 @@ public class Bloque {
 		escala = 0.1;
 		alto = sprite.getHeight(null)*escala;
 		ancho = sprite.getWidth(null)*escala;
+		System.out.println("el alto es: " + alto + " el ancho es: " + ancho);
 	}
 	
 	public void mostrar(Entorno e) {

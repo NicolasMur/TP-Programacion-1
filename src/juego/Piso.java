@@ -12,7 +12,7 @@ public class Piso {
 		this.y = y;
 		
 		for(int i = 0; i < bloques.length; i++) {
-			bloques[i] = new Bloque((i+0.5)* testigo.ancho, y);
+			bloques[i] = new Bloque((i+0.5)* testigo.ancho, y);  //LA POSICION DE LOS BLOQUES, SI SE AUMENTA O DECRECE SE MUEVE A LOS COSTADOS DE LA PANTALLA
 		}
 		
 	}

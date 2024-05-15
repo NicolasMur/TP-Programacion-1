@@ -78,6 +78,7 @@ public class Juego extends InterfaceJuego {
 			p[i].mostrar(entorno);
 		}
 		
+		//CANTIDAD DE BALAS EN PANTALLA
 		if( bala != null && (bala.x < -0.1 * entorno.ancho() 
 		|| bala.x > entorno.ancho() * 1.1)) {
 			bala = null;
@@ -135,21 +136,21 @@ public class Juego extends InterfaceJuego {
 	
 	public boolean detectarColision(Bartolome ba, Bloque bl) {
 		return Math.abs((ba.getTecho() - bl.getPiso())) < 2 &&  
-				(ba.getIzquierdo() < (bl.getDerecho())) &&
-				(ba.getDerecho() > (bl.getIzquierdo()));		
+				(ba.getIzquierdo()-5 < (bl.getDerecho())) &&
+				(ba.getDerecho()+5 > (bl.getIzquierdo()));		
 	}
 	// BLOQUE ORO. 
 	public boolean detectarColision(Bartolome ba, Piso pi) {
 		for(int i = 0; i < pi.bloques.length; i++) {
 			if(pi.bloques[i] != null && detectarColision(ba, pi.bloques[i])) {
 				if(pi.bloques[i].rompible) {
-					pi.bloques[i] = null;
+					pi.bloques[i] = null; 
 				}
-				return true;
+				return true; //ESTO ROMPE EL BLOQUE
 			}
 		}
 		
-		return false;
+		return false; //ACA COLISIONA CON UN BLOQUE DE ORO
 	}
 	
 	public boolean detectarColision(Bartolome ba, Piso[] pisos) {
