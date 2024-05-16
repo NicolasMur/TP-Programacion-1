@@ -1,27 +1,30 @@
-package juego;
+package entidades;
 
 import java.awt.Image;
+import java.awt.Rectangle;
 
 import entorno.Entorno;
 import entorno.Herramientas;
 
 public class Bartolome {
-	double x, y;
+	public double x;
+	public double y;
 	Image spriteIzq;
 	Image spriteDer;
-	boolean dir; // false = Izq
-	boolean estaApoyado;
-	boolean estaSaltando; //false = no esta saltando
-	double escala;
-	double alto;
-	double ancho;
-	int contadorSalto;
+	public boolean dir; // false = Izq
+	public boolean estaApoyado;
+	public boolean estaSaltando; //false = no esta saltando
+	public double escala;
+	public double alto;
+	public double ancho;
+	public int contadorSalto;
+	public Rectangle rectangulo;
 
 	public Bartolome(double x, double y) {
 		this.x = x;
 		this.y = y;
-		spriteIzq = Herramientas.cargarImagen("bodyIzq.png");
-		spriteDer = Herramientas.cargarImagen("body.png");
+		spriteIzq = Herramientas.cargarImagen("entidades/bodyIzq.png");
+		spriteDer = Herramientas.cargarImagen("entidades/body.png");
 		dir = false;
 		contadorSalto = 0;
 		estaApoyado = false;
@@ -29,6 +32,12 @@ public class Bartolome {
 		escala = 0.2;
 		alto = spriteIzq.getHeight(null) * escala;
 		ancho = spriteIzq.getWidth(null) * escala;
+//		rectangulo = new Rectangle();     
+//		rectangulo.x = 40;
+//		rectangulo.y = 0;
+//		rectangulo.height = 54;
+//		rectangulo.width = 60;
+		
 		
 	}
 

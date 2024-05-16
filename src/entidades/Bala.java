@@ -1,4 +1,4 @@
-package juego;
+package entidades;
 
 import java.awt.Image;
 
@@ -7,21 +7,26 @@ import entorno.Herramientas;
 
 public class Bala {
 	
-	double x, y, escala, alto, ancho, velocidad;
-	boolean dir; // false = Izq
+	public double x;
+	public double y;
+	public double escala;
+	public double alto;
+	public double ancho;
+	public double velocidad;
+	public boolean dir; // false = Izq
 	Image spriteIzq;
 	Image spriteDer;
 
 	public Bala(double x, double y, boolean direccion) {
 		this.x = x;
 		this.y = y;
-		spriteIzq = Herramientas.cargarImagen("balaIzq.png");
-		spriteDer = Herramientas.cargarImagen("Bala.png");
+		spriteIzq = Herramientas.cargarImagen("entidades/balaIzq.png");
+		spriteDer = Herramientas.cargarImagen("entidades/Bala.png");
 		dir = direccion;
 		escala = 0.156;
 		alto = spriteIzq.getHeight(null) * escala;
 		ancho = spriteIzq.getWidth(null) * escala;
-		this.velocidad = 10;
+		this.velocidad = 20;
 	}
 
 	public void mostrar(Entorno e) {

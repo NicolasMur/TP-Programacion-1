@@ -1,14 +1,18 @@
-package juego;
+package bloques;
 
 import java.awt.Image;
+import java.awt.Rectangle;
 
 import entorno.Entorno;
 import entorno.Herramientas;
 
 public class Bloque {
-	double x, y, alto, ancho, escala;
+	double x, y, alto;
+	public double ancho;
+	double escala;
 	Image sprite;
-	boolean rompible; //true = rompible
+	public boolean rompible; //true = rompible
+	public Rectangle bloque;
 	
 	public Bloque(double x, double y) {
 		this.x = x;
@@ -18,16 +22,22 @@ public class Bloque {
 			rompible = false;
 		}
 		if(rompible) {
-			sprite = Herramientas.cargarImagen("bloque.png");
+			sprite = Herramientas.cargarImagen("entidades/bloque.png");
 		}
 		else {
-			sprite = Herramientas.cargarImagen("bloqueOro.png");
+			sprite = Herramientas.cargarImagen("entidades/bloqueOro.png");
 		}
 		
 		escala = 0.1;
 		alto = sprite.getHeight(null)*escala;
 		ancho = sprite.getWidth(null)*escala;
 		System.out.println("el alto es: " + alto + " el ancho es: " + ancho);
+//		bloque = new Rectangle();
+//		bloque.x = 38;
+//		bloque.y = 38;
+//		bloque.height = 38;
+//		bloque.width = 38;
+		
 	}
 	
 	public void mostrar(Entorno e) {

@@ -1,10 +1,11 @@
-package juego;
+package entidades;
 
+import bloques.Bloque;
 import entorno.Entorno;
 
 public class Piso {
-	Bloque[] bloques;
-	double y;
+	public Bloque[] bloques;
+	public double y;
 	
 	public Piso(double y) {
 		Bloque testigo = new Bloque(0, 0);

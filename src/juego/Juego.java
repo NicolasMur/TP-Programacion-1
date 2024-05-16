@@ -1,5 +1,12 @@
 package juego;
 
+import java.awt.Color;
+
+import bloques.Bloque;
+import entidades.Bala;
+import entidades.Bartolome;
+import entidades.Bicho;
+import entidades.Piso;
 import entorno.Entorno;
 import entorno.InterfaceJuego;
 
@@ -61,6 +68,7 @@ public class Juego extends InterfaceJuego {
 		
 		if(bala == null && entorno.estaPresionada(entorno.TECLA_ESPACIO)) {
 			bala = new Bala(bart.x, bart.y, bart.dir);
+			 
 		}
 		
 		fondo.dibujarse(this.entorno);
@@ -136,8 +144,8 @@ public class Juego extends InterfaceJuego {
 	
 	public boolean detectarColision(Bartolome ba, Bloque bl) {
 		return Math.abs((ba.getTecho() - bl.getPiso())) < 2 &&  
-				(ba.getIzquierdo()-5 < (bl.getDerecho())) &&
-				(ba.getDerecho()+5 > (bl.getIzquierdo()));		
+				(ba.getIzquierdo() < (bl.getDerecho())) &&
+				(ba.getDerecho() > (bl.getIzquierdo()));		
 	}
 	// BLOQUE ORO. 
 	public boolean detectarColision(Bartolome ba, Piso pi) {

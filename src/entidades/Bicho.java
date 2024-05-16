@@ -1,4 +1,4 @@
-package juego;
+package entidades;
 import java.awt.Color;
 import java.awt.Image;
 import entorno.Entorno;
@@ -19,8 +19,8 @@ public class Bicho {
 	public Bicho (double x, double y) {
 		this.x = x;
 		this.y = y;
-		bichoIzq = Herramientas.cargarImagen("bicho.gif");
-		bichoDer = Herramientas.cargarImagen("bicho.gif");
+		bichoIzq = Herramientas.cargarImagen("entidades/bicho.gif");
+		bichoDer = Herramientas.cargarImagen("entidades/bicho.gif");
 		direccion = false;
 		estaApoyado = false;
 		escala = 0.6;

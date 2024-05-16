@@ -14,7 +14,7 @@ public class Fondo {
         this.x = x;
         this.y = y;
 
-        img = Herramientas.cargarImagen("paisaje.gif");
+        img = Herramientas.cargarImagen("entidades/paisaje.gif");
         escala = 3; // Cambiado el valor de escala a 1
     }
 
