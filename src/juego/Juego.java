@@ -16,7 +16,7 @@ public class Juego extends InterfaceJuego {
 	
 	public Juego() {
 		// Inicializa el objeto entorno
-		this.entorno = new Entorno(this, "El maestro fuego", 1200, 900);
+		this.entorno = new Entorno(this, "El maestro fuego", 800, 600);
 		
 		fondo = new Fondo(400,300);
 		bart  = new Bartolome(400, 540);
